@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cinzel', serif;
+}
+h1 {
+    margin: 0;
+    color: white;
+    font-family: 'Cinzel', serif;
+}
+.text-center {
+    text-align: center;
+}
+#app {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../image/background.jpg);
+    background-size: cover;
+
+}
+.registration {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    background-image: url(../image/regImg.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.choiceChamp .choice {
+    cursor: pointer;
+    border: 2px solid red;
+}
+.choiceChamp button {
+    margin: 20px 20px;
+}
+.choiceChamp .choice:target {
+    border: 2px solid red;
+}
+#choiceMage {
+    width: 100px;
+    height: 100px;
+    background-image: url(../image/regImage/mage.jpg);
+    background-size: cover;
+}
+#choiceHero {
+    width: 100px;
+    height: 100px;
+    background-image: url(../image/regImage/hero.jpeg);
+    background-size: cover;
+}
+#choiceFireWoman {
+    width: 100px;
+    height: 100px;
+    background-image: url(../image/regImage/fireWoman.jpg);
+    background-size: cover;
+}
+.redBorder {
+    border: 2px solid red;
+    border-radius: 10px;
+}
+.reg-block {
+    margin: 0 auto;
+    width: 100%;
+}
+.registration button {
+    margin: 30px 20px;
+}
+.registration input {
+    height: 50px;
+    text-align: center;
+    font-size: 30px;
+    background: #36393e;
+    color: white;
+    outline: none;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+.healthbar {
+    width: 100%;
+    height: 10%;
+    background: white;
+    transition: width 1000ms;
+    font-weight: bold;
+}
+.health {
+    background: linear-gradient(to top, #F60018, #a62e3a);
+}
+.mana {
+    background: linear-gradient(to top, #5996c0, #3f6a88);
+}
+.manabar {
+    width: 100%;
+    height: 10%;
+    margin: auto;
+    transition: width 500ms;
+    font-weight: bold;
+}
+.controls, .log {
+    margin-top: 30px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 3px 6px #ccc;
+}
+.heroes {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.heroes img {
+    width: 100%;
+}
+.nameHero {
+    background: linear-gradient(to top,#7d7663 , #c2a375);
+    background-image: url(../image/button.png);
+    background-size: cover;
+    width: 100%;
+}
+.heroDiv {
+    display: flex;
+    width: 100%;
+    margin: 20px 30px;
+    height: 100%;
+}
+.logo {
+    width: 50%;
+}
+.bars {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.bars-enemy {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.bars-monster {
+    align-items: flex-end;
+}
+#skills {
+    padding-top: 20px;
+    width: 50%;
+    height: 80%;
+    background-image: url(../image/skills.jpg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+#skills button {
+    width: 70px;
+    height: 70px;
+    padding: 0;
+}
+.player-icons {
+    width: 100%;
+    background:white;
+}
+.upgrade-menu {
+    border-radius: 50%;
+    background: black;
+}
+.turn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.log ul {
+    list-style: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.log ul li {
+    margin: 5px;
+}
+
+.log ul .player-turn {
+    color: blue;
+    background-color: #e4e8ff;
+}
+
+.log ul .monster-turn {
+    color: red;
+    background-color: #ffc0c1;
+}
+
+button {
+    font-size: 20px;
+    background-color: #eee;
+    padding: 12px;
+    box-shadow: 0 1px 1px black;
+    margin: 10px;
+    outline: none;
+}
+
+.start-game {
+    background-image: url(../image/button.png);
+    background-size: cover;
+    color: white;
+    cursor: pointer;
+}
+#attack {
+    background-color: #ff7367;
+}
+
+#attack:hover {
+    background-color: #ff3f43;
+}
+
+#special-attack {
+    background-color: #ffaf4f;
+}
+
+#special-attack:hover {
+    background-color: #ff9a2b;
+}
+
+#heal {
+    background-color: #aaffb0;
+}
+
+#heal:hover {
+    background-color: #76ff7e;
+}
+
+#give-up {
+    margin: 0 47%;
+    background-color: #ffffff;
+}
+
+#give-up:hover {
+    background-color: #c7c7c7;
+}
+#upgrade button{
+    margin-top: 30px;
+    background: #00A287;
+}
+#upgrade {
+    display: flex;
+    justify-content: center;
+}
+.person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.show-dmg-block {
+    text-align: center;
+    position: relative;
+}
+.crit,
+.show-dmg {
+    animation-duration: 2s;
+    opacity: 0;
+    position: absolute;
+    font-weight: bold;
+    font-size: 20px;
+}
+.crit {
+    animation-name: move;
+    left: 40%;
+}
+.show-dmg{
+    animation-name: show-dmg;
+    left: 45%;
+}
+
+.show-dmg-block h1 {
+    color: red;
+    font-size: 60px;
+    text-align: center;
+}
+.visibleCrit {
+    display: none;
+}
+.crit-anim {
+    animation-name: move;
+    animation-duration: 2s;
+}
+@keyframes move {
+    from {
+        top: 200px;
+        opacity: 1;
+    }
+    to {
+        top: 10px;
+        opacity: 0;
+    }
+}
+@keyframes show-dmg {
+    from {
+        top: 300px;
+        opacity: 1;
+    }
+    to {
+        top: 110px;
+        opacity: 0;
+    }
+}

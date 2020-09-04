@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monster Slayer</title>
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="app">
+        <div class="registration" v-if="show">
+            <h1>Select character</h1>
+            <div class="choiceChamp">
+                    <button @click="choiceHero(0)" :class="{choice: choice[0].choice}" id="choiceHero"></button>
+                    <button @click="choiceHero(1)" :class="{choice: choice[1].choice}" id="choiceMage"></button>
+                    <button @click="choiceHero(2)" :class="{choice: choice[2].choice}" id="choiceFireWoman"></button>
+            </div>
+                <input type="text" v-model="name" placeholder="your name">
+                <button @click="startingGame" class="start-game">START NEW GAME</button>
+        </div>
+        <div v-else class="game-block">
+            <div class="heroes">
+                <div class="heroDiv">
+                    <div class="logo">
+                        <div class="show-dmg-block">
+                            <h1 :class="{visibleCrit:critical}" class="crit">Crit</h1>
+                            <h1 :class="{visibleCrit:showDmg}" class="show-dmg">{{ monsterSmallAttackDmg }}</h1>
+                        </div>
+                        <img :src="championImage" alt="">
+                            <div class="nameHero"> 
+                            <h1 class="text-center">{{ name }}</h1>
+                            </div>
+                        </div>
+                    <div class="bars">
+                            <div class="healthbar text-center health" style="margin: 0; color: white;"
+                                    :style="{width: percentPlayerHp + '%'}">
+                                        {{playerHealth}}
+                            </div>
+                            <div class="manabar text-center mana" style="margin: 0; color: white;"
+                                :style="{width: percentPlayerMana + '%'}">
+                                    {{playerMana}}
+                            </div>
+                        <div id="skills">
+                            <button :disabled="isDisabled" @click="playerSmallAttack">
+                                <img id="attack" :src="skill1" class="player-icons">
+                            </button>
+                            <p>small Attack</p>
+                            <button :disabled="isDisabled" @click="bigAttackPlayer">
+                                <img id="special-attack" class="player-icons" :src="skill2">
+                            </button>
+                            <p>super Attack</p>
+                            <button :disabled="isDisabled" @click="playerHealing">
+                                <img id="heal" class="player-icons" :src="skill3">                               
+                            </button>
+                            <p>heal</p>
+                            <button class="upgrade-menu">
+                                <img class="upgrade-menu" src="image/plus.png"> 
+                            </button>
+                    
+                        </div>
+                    </div>
+                </div>
+                <div class="heroDiv bars-enemy">
+                        <div class="logo">
+                                <img src="image/boss.jpg" alt="">
+                                <div class="nameHero">
+                                    <h1 class="text-center">MONSTER</h1>
+                                </div>
+                            </div>
+                    <div class="bars bars-monster">
+                            <div class="healthbar text-center health" style="margin: 0; color: white;"
+                                :style="{width: monsterHealth + '%'}">
+                                    {{monsterHealth + "%"}}
+                            </div>
+                            <div class="manabar text-center mana" style="margin: 0; color: white;"
+                                :style="{width: monsterMana + '%'}">
+                                    {{monsterMana + "%"}}
+                            </div>
+                            <div id="skills">
+                                    <!-- <button :disabled="isDisabled">
+                                        <img id="attack" src="image/attackIcon.png" class="player-icons">
+                                        
+                                    </button>
+                                    <p>small Attack</p>
+                                    <button :disabled="isDisabled">
+                                        <img id="special-attack" class="player-icons" src="image/strongAttack.png">                                       
+                                    </button>
+                                    <p>super Attack</p> -->
+                                    <button :disabled="isDisabled">
+                                        <img id="heal" class="player-icons enemy-heal" src="image/icon13.png">                                      
+                                    </button>
+                                    <p>Passive:super Regeneration - when monster have 50%hp or less he will cost 50% mana for healing</p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <section>
+                    <section class="row controls">
+                    </section>
+                    <section class="row controls">
+                        <div class="small-12 columns">
+                            <p>monster</p>
+                            <button @click="monsterSmallAttack" id="attack">ATTACK</button>
+                            <button @click="bigAttackMonster" id="special-attack">SPECIAL ATTACK</button>
+                            <button @click="monsterHealing" id="heal">HEAL</button>
+                        </div>
+                    </section>
+                    <section id="upgrade">
+                        <p> {{playerAttack}} </p>
+                        <button @click="upgradePlayer" >Upgrade Player</button>
+                        <button @click="upgradeMonster" >Upgrade Monster</button>
+                        <p>{{monsterAttack}} </p>
+                    </section>
+                </section> -->
+                <button @click="quit" id="give-up">Quit</button>
+        </div>
+    <!-- <section v-if="showControls"  @click="show" class="row controls">
+        <div class="small-12 columns">
+            <button @click="startingGame" id="start-game">START NEW GAME</button>
+        </div>
+    </section> -->
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
